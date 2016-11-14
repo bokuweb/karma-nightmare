@@ -1,0 +1,25 @@
+{
+  "name": "karma-nightmare",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "@bokuweb",
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "karma": "^1.3.0",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-mocha": "^1.2.0",
+    "mocha": "^3.1.2",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "@bokuweb/nightmare-custom-for-karma": "^2.8.1"
+  }
+}
