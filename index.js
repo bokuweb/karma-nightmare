@@ -1,7 +1,6 @@
 var path = require('path');
 var nightmare = require('@bokuweb/nightmare-custom-for-karma')({
   waitTimeout: 1000000000,
-  executionTimeout: 1000,
   width: 600,
   height: 600,
   webPreferences: {
@@ -37,4 +36,3 @@ NightmareBrowser.$inject = ['baseBrowserDecorator', 'args']
 module.exports = {
   'launcher:Nightmare': ['type', NightmareBrowser],
 }
-
