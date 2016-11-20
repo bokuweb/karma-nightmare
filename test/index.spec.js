@@ -1,9 +1,9 @@
-const screenshot = require('../client/screenshot');
+const { screenshot } = require('../client');
 
 describe('nightmare', function () {
   it('one plus one equals two', function (done) {
     document.querySelector('body').innerText = 'test';
-    screenshot('./test.png', function() { done() });
+    screenshot('./test.png').then(done);
   })
 });
 
