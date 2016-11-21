@@ -21,5 +21,6 @@
   },
   "dependencies": {
     "@bokuweb/nightmare-custom-for-karma": "^2.8.1"
-  }
+  },
+  "types": "./index.d.ts"
 }
