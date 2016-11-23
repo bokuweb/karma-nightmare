@@ -5,13 +5,12 @@ var client = require("./client");
 var NightmareBrowser = function (baseBrowserDecorator, args, config) {
   const files = glob.sync('./**/node_modules/karma-nightmare/lib/browser.js');
   baseBrowserDecorator(this);
-  const option = {
-    width: 1200,
-    height: 1200,
-  }
-
   this._start = function (url) {
-    this._execCommand('node', [path.resolve(files[0]), url])
+    this._execCommand('node', [
+      path.resolve(files[0]),
+      url,
+      JSON.stringify(config.nightmareOptions),
+    ])
   }
 }
 

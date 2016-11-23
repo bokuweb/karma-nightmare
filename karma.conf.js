@@ -59,6 +59,11 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
+    nightmareOptions: {
+      width: 1280,
+      height: 800,
+    },
+
     browserify: {
       debug: true,
       extensions: ['.js'],
