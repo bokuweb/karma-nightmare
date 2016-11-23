@@ -1,5 +1,4 @@
-declare module "karma-nightmare/client" {
-  export function screenshot(path:string): Promise<void>;
+declare module "karma-nightmare" {
+  export function screenshot(path: string): Promise<void>;
 }
-
 

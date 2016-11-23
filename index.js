@@ -1,5 +1,6 @@
 var path = require('path');
 var glob = require("glob")
+var client = require("./client");
 
 var NightmareBrowser = function (baseBrowserDecorator, args, config) {
   const files = glob.sync('./**/node_modules/karma-nightmare/lib/browser.js');
@@ -22,4 +23,5 @@ NightmareBrowser.$inject = ['baseBrowserDecorator', 'args', 'config']
 
 module.exports = {
   'launcher:Nightmare': ['type', NightmareBrowser],
+  screenshot: client.screenshot,
 }
