@@ -17,7 +17,8 @@
     "karma-cli": "^1.0.1",
     "karma-mocha": "^1.2.0",
     "mocha": "^3.1.2",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "karma-nightmare": "https://github.com/bokuweb/karma-nightmare"
   },
   "dependencies": {
     "@bokuweb/nightmare-custom-for-karma": "^2.8.1"

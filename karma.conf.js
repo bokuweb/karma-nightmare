@@ -65,7 +65,7 @@ module.exports = function(config) {
     },
 
     plugins: [
-      require('./'),
+      'karma-nightmare',
       'karma-mocha',
       'karma-browserify'
     ]
