@@ -6,6 +6,11 @@
   "scripts": {
     "test": "karma start"
   },
+  "keywords": [
+    "karma-plugin",
+    "karma-launcher",
+    "nightmare"
+  ],
   "author": "@bokuweb",
   "license": "MIT",
   "devDependencies": {
