@@ -1,6 +1,7 @@
 window.__nightmare = {};
 __nightmare.ipc = require('electron').ipcRenderer;
 __nightmare.fs = require('fs');
+__nightmare.testProperty = "testProperty";
 
 // Listen for error events
 window.addEventListener('error', function(e) {

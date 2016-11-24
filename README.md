@@ -9,9 +9,9 @@ A Karma plugin. Launcher for Nightmare
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [API](#API)
-- [Extend](#Extend)
-- [Test](#Test)
+- [API](#api)
+- [Extend](#extend)
+- [Test](#test)
 - [Contribute](#contribute)
 - [License](#license)
 
