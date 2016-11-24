@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = function(config) {
   config.set({
 
@@ -10,7 +12,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*.js'
+      'test/**/*.spec.js'
     ],
 
     // list of files to exclude
@@ -53,7 +55,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
@@ -62,7 +64,10 @@ module.exports = function(config) {
     nightmareOptions: {
       width: 800,
       height: 600,
-      show: false,
+      show: true,
+      webPreferences: {
+        preload: path.resolve("test/custom-script.js")
+      }
     },
 
     browserify: {

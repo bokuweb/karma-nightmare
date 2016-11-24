@@ -16,10 +16,10 @@ describe('karma-nightmare spec', () => {
   })
 
   it('should expected property registered to window.__nightmare', () => {
-    const testProperty = typeof window === 'undefined' &&
-          window.__nightmare.testProperty ||
-          window.parent.__nightmare.testProperty;
-    assert.equal(testProperty, 'testProperty');
+    const test = typeof window === 'undefined' &&
+          window.__nightmare.test ||
+          window.parent.__nightmare.test;
+    assert.equal(test, 'test');
   })
 });
 
