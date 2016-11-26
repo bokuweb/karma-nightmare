@@ -67,9 +67,6 @@ describe('karma-nightmare spec', () => {
 
 ## Extend
 
-If you need to do something custom when you first load the window environment, you can specify a custom preload script. Here's how you do that:
-
-
 ``` js
 // karma.conf.js
 const path = require('path');
@@ -85,6 +82,7 @@ module.exports = function(config) {
       height: 600,
       show: false,
       webPreferences: {
+        nodeIntegration: true, // If true, you can use `require` in browser context.
         preload: path.resolve("custom-script.js")
         //alternative: preload: "absolute/path/to/custom-script.js"
       }
@@ -93,8 +91,22 @@ module.exports = function(config) {
 }
 ```
 
-By using this function, you can use the node module in the browser.
+### custom preload script
+
+If you need to do something custom when you first load the window environment, you can specify a custom preload script.
 Please see default [custom-script.js](https://github.com/bokuweb/karma-nightmare/blob/master/lib/custom-script.js) and [this project test](https://github.com/bokuweb/karma-nightmare/blob/master/test/index.spec.js). 
+
+### nodeIntegration
+
+If true, you can use `require` in browser context, as follows.
+
+```
+  it('require sample', () => {
+    const require = window.require || window.parent.require;
+    const text = require('fs').readFileSync('./test/test.txt', 'utf8');
+  })
+```
+
 
 ## Test
 
