@@ -13,13 +13,27 @@ describe('karma-nightmare spec', () => {
         done();
       })
       .catch(() => { throw new Error('rejected') });
-  })
+  });
 
-  it('should expected property registered to window.__nightmare', () => {
+  it('should expected property registered to window.__nightmare/window.parent.__nightmare', () => {
     const test = typeof window === 'undefined' &&
           window.__nightmare.test ||
           window.parent.__nightmare.test;
     assert.equal(test, 'test');
+  });
+
+  it('should be able to use require with nodeIntegration = true', () => {
+    const require = typeof window === 'undefined' &&
+          window.require ||
+          window.parent.require;
+    assert(!!require('fs'));
+  })
+
+  it('should be able to read test.txt with fs module', () => {
+    const require = typeof window === 'undefined' &&
+          window.require ||
+          window.parent.require;
+    assert.equal(require('fs').readFileSync('./test/test.txt', 'utf8'), 'text for test\n');
   })
 });
 
