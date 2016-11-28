@@ -1,27 +1,25 @@
-const path = require('path');
-const glob = require("glob")
-const file = path.join(__dirname, 'lib/custom-script.js');
-const options = JSON.parse(process.argv[3]);
-const nightmare = require('@bokuweb/nightmare-custom-for-karma')(Object.assign({
-  width: 800,
-  height: 600,
-  show: true,
-}, options, {
-  waitTimeout: 1000000000,
-  webPreferences: Object.assign(
-    options.webPreferences, {
-      preload: (options.webPreferences && options.webPreferences.preload) || file,
-    }
-  )
-}));
+var path = require('path');
+var client = require("./client");
 
-nightmare
-  .goto(process.argv[2])
-  .wait('#browsers')
-  .evaluate(() => {
-    document.querySelector('#banner').style.display = 'none';
-    document.querySelector('#browsers').style.display = 'none';
-  })
-  .wait(() => null)
-  .end()
-  .catch((error) => console.error(error));
+var NightmareBrowser = function (baseBrowserDecorator, args, config) {
+  const file = path.join(__dirname, 'lib/browser.js');
+  baseBrowserDecorator(this);
+  this._start = function (url) {
+    this._execCommand('node', [
+      file,
+      url,
+      JSON.stringify(config.nightmareOptions),
+    ])
+  }
+}
+
+NightmareBrowser.prototype = {
+  name: 'Nightmare',
+}
+
+NightmareBrowser.$inject = ['baseBrowserDecorator', 'args', 'config']
+
+module.exports = {
+  'launcher:Nightmare': ['type', NightmareBrowser],
+  screenshot: client.screenshot,
+}
