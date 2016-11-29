@@ -5,7 +5,7 @@ module.exports = {
           parent.window.__nightmare;
     return new Promise(function (resolve) {
       if (!nightmare) resolve();
-      nightmare.capture({ path });
+      nightmare.capture({ path: path });
       nightmare.ipc.once('reply', function () {
         resolve();
       });
