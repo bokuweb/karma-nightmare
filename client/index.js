@@ -3,10 +3,10 @@ module.exports = {
     const nightmare = typeof window !== 'undefined' &&
           window.__nightmare ||
           parent.window.__nightmare;
-    return new Promise((resolve) => {
+    return new Promise(function (resolve) {
       if (!nightmare) resolve();
       nightmare.capture({ path });
-      nightmare.ipc.once('reply', () => {
+      nightmare.ipc.once('reply', function () {
         resolve();
       });
     });
