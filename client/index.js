@@ -1,5 +1,5 @@
 module.exports = {
-  screenshot(path) {
+  screenshot: function (path) {
     const nightmare = typeof window !== 'undefined' &&
           window.__nightmare ||
           parent.window.__nightmare;
