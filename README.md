@@ -45,8 +45,10 @@ module.exports = function(config) {
 
 The options attribute allows you to initialize properties on the nightmare browser window.   
 The available options are [documented here](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
-   
-Please also see [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob/master/karma.conf.js) of this project, using `mocha` and `browserify`.
+
+*** Attention, `nodeIntegration`, `waitTimeout`, `preload` options is fixed by `karma-nightmare`. you can not change these options ***
+
+Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob/master/karma.conf.js) of this project, using `mocha` and `browserify`.
 
 ## API
 
@@ -60,53 +62,10 @@ const { screenshot } = require('karma-nightmare');
 describe('karma-nightmare spec', () => {
   it('should capture browser screenshot', (done) => {
     document.querySelector('body').innerText = 'karma-nightmare spec';
-    screenshot('./screenshot.png').then(() => done());
+    screenshot('./screenshot.png').then(done);
   })
 });
 ```
-
-## Extend
-
-``` js
-// karma.conf.js
-const path = require('path');
-
-module.exports = function(config) {
-  config.set({
-
-    ....
-
-    // you can define custom flags
-    nightmareOptions: {
-      width: 800,
-      height: 600,
-      show: false,
-      webPreferences: {
-        nodeIntegration: true, // If true, you can use `require` in browser context.
-        preload: path.resolve("custom-script.js")
-        //alternative: preload: "absolute/path/to/custom-script.js"
-      }
-    },
-  })
-}
-```
-
-### custom preload script
-
-If you need to do something custom when you first load the window environment, you can specify a custom preload script.
-Please see default [custom-script.js](https://github.com/bokuweb/karma-nightmare/blob/master/lib/custom-script.js) and [this project test](https://github.com/bokuweb/karma-nightmare/blob/master/test/index.spec.js). 
-
-### nodeIntegration
-
-If true, you can use `require` in browser context, as follows.
-
-```
-  it('require sample', () => {
-    const require = window.require || window.parent.require;
-    const text = require('fs').readFileSync('./test/test.txt', 'utf8');
-  })
-```
-
 
 ## Test
 

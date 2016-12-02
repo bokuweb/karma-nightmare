@@ -67,7 +67,7 @@ module.exports = function(config) {
       show: true,
       webPreferences: {
         nodeIntegration: true,
-        preload: path.resolve("test/custom-script.js")
+        // preload: path.resolve("test/custom-script.js")
       }
     },
 
@@ -77,7 +77,7 @@ module.exports = function(config) {
     },
 
     plugins: [
-      'karma-nightmare',
+      require('./'),
       'karma-mocha',
       'karma-browserify'
     ]

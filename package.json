@@ -19,15 +19,14 @@
     "chai": "^3.5.0",
     "karma": "^1.3.0",
     "karma-browserify": "^5.1.0",
-    "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-mocha": "^1.2.0",
-    "karma-nightmare": "https://github.com/bokuweb/karma-nightmare",
     "mocha": "^3.1.2",
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "@bokuweb/nightmare-custom-for-karma": "^2.8.1"
+    "mkdirp": "^0.5.1",
+    "nightmare": "^2.8.1"
   },
   "types": "./index.d.ts"
 }

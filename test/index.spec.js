@@ -1,4 +1,4 @@
-const { screenshot } = require('karma-nightmare');
+const { screenshot } = require('../');
 const { assert } = require('chai');
 
 describe('karma-nightmare spec', () => {
@@ -15,11 +15,18 @@ describe('karma-nightmare spec', () => {
       .catch(() => { throw new Error('rejected') });
   });
 
-  it('should expected property registered to window.__nightmare/window.parent.__nightmare', () => {
-    const test = typeof window === 'undefined' &&
-          window.__nightmare.test ||
-          window.parent.__nightmare.test;
-    assert.equal(test, 'test');
+  it('should screenshot saved nested dir', (done) => {
+    document.querySelector('body').innerText = 'karma-nightmare spec';
+    const PATH = './test/screenshot/screenshot.png';
+    screenshot(PATH)
+      .then(() => {
+        const fs = typeof window === 'undefined' &&
+              window.__nightmare.fs ||
+              window.parent.__nightmare.fs;
+        fs.readFileSync(PATH);
+        done();
+      })
+      .catch(() => { throw new Error('rejected') });
   });
 
   it('should be able to use require with nodeIntegration = true', () => {
