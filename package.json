@@ -11,6 +11,10 @@
     "karma-launcher",
     "nightmare"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bokuweb/karma-nightmare.git"
+  },
   "author": "@bokuweb",
   "license": "MIT",
   "devDependencies": {

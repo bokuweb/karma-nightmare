@@ -65,9 +65,6 @@ module.exports = function(config) {
       width: 800,
       height: 600,
       show: true,
-      webPreferences: {
-        nodeIntegration: true,
-        // preload: path.resolve("test/custom-script.js")
       }
     },
 
