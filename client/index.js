@@ -4,8 +4,8 @@ module.exports = {
       const nightmare = typeof window !== 'undefined' &&
             window.__nightmare ||
             parent.window.__nightmare;
-      const fs = nightmare.fs;
       if (!nightmare) return;
+      const fs = nightmare.fs;
       const win = nightmare.remote.getCurrentWindow();
       setTimeout(function() {
         win.capturePage(function(img) {
