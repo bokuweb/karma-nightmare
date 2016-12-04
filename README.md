@@ -52,7 +52,11 @@ Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob
 
 ## API
 
-### screenshot(path)
+### isNightmare(): boolean
+
+Return `true`, when test is running on nightmare. 
+
+### screenshot(path: string): Promise<void>
 
 Takes a screenshot of the current test. Useful for view test. The output is always a png.
 
