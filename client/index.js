@@ -1,4 +1,10 @@
 module.exports = {
+  isNightmare: function () {
+    const nightmare = typeof window !== 'undefined' &&
+          window.__nightmare ||
+          parent.window.__nightmare;
+    return !!nightmare;
+  },
   screenshot: function (path) {
     return new Promise(function (resolve, reject) {
       const nightmare = typeof window !== 'undefined' &&

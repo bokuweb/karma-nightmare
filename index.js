@@ -22,4 +22,5 @@ NightmareBrowser.$inject = ['baseBrowserDecorator', 'args', 'config']
 module.exports = {
   'launcher:Nightmare': ['type', NightmareBrowser],
   screenshot: client.screenshot,
+  isNightmare: client.isNightmare,
 }
