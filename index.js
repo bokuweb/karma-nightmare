@@ -2,7 +2,7 @@ var path = require('path');
 var client = require("./client");
 
 var NightmareBrowser = function (baseBrowserDecorator, args, config) {
-  const file = path.join(__dirname, 'lib/browser.js');
+  const file = path.resolve(path.dirname(require.resolve('karma-nightmare')), 'lib/browser.js');
   baseBrowserDecorator(this);
   this._start = function (url) {
     this._execCommand('node', [
