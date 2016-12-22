@@ -10,7 +10,7 @@ module.exports = {
       const nightmare = typeof window !== 'undefined' &&
             window.__nightmare ||
             parent.window.__nightmare;
-      if (!nightmare) return;
+      if (!nightmare) return resolve();
       const fs = nightmare.fs;
       const win = nightmare.remote.getCurrentWindow();
       setTimeout(function() {
