@@ -1,29 +1,19 @@
 box: node
 
 build:
-  # The steps that will be executed on build
-  # Steps make up the actions in your pipeline
-  # Read more about steps on our dev center:
-  # http://devcenter.wercker.com/docs/steps/index.html
-  steps:
+
+  before-steps:
     - script:
-        name: starting xvfb
+        name: Enable virtual display
         code: |
-          # Start xvfb which gives the context an virtual display
-          # which is required for tests that require an GUI
           export DISPLAY=:99.0
           start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1024x768x24 -ac +extension GLX +render -noreset
-          # Give xvfb time to start. 3 seconds is the default for all xvfb-run commands.
           sleep 3
           
   steps:
-    # A step that executes `npm install` command
     - npm-install
-    # A step that executes `npm test` command
     - npm-test
 
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
     - script:
         name: echo nodejs information
         code: |
