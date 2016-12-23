@@ -1,12 +1,9 @@
-box: node:6.9
+box: ubuntu:16.04
 
 build:
 
   steps:
-    - script:
-      name: indentify distribution
-      code: cat /etc/lsb-release
-      
+
     - install-packages:
       packages: xvfb
 
