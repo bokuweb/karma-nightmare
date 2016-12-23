@@ -2,15 +2,17 @@ box: node
 
 build:
 
-  before-steps:
+  steps:
+    - install-packages:
+      packages: xvfb
+
     - script:
-        name: Enable virtual display
+      name: Enable virtual display
         code: |
           export DISPLAY=:99.0
           start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1024x768x24 -ac +extension GLX +render -noreset
           sleep 3
-          
-  steps:
+            
     - npm-install
     - npm-test
 
