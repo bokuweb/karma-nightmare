@@ -9,7 +9,15 @@ var NightmareBrowser = function (baseBrowserDecorator, args, config) {
       file,
       url,
       JSON.stringify(config.nightmareOptions),
-    ])
+    ]);
+
+    this._process.stderr.on('data', function (data) {
+      console.log('' + data);
+    })
+
+    this._process.stdout.on('data', function (data) {
+      console.log('' + data);
+    })
   }
 }
 
