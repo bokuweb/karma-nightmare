@@ -2,7 +2,8 @@ const { screenshot } = require('../');
 const { assert } = require('chai');
 
 describe('karma-nightmare spec', () => {
-   it('should capture browser screenshot', (done) => {
+
+  it('should capture browser screenshot', (done) => {
     document.querySelector('body').innerText = 'karma-nightmare spec';
     screenshot('./screenshot.png')
       .then(() => {
