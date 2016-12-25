@@ -2,8 +2,11 @@ const { screenshot } = require('../');
 const { assert } = require('chai');
 
 describe('karma-nightmare spec', () => {
-  it('should capture browser screenshot', (done) => {
+  console.log(window)
+   it('should capture browser screenshot', (done) => {
+    console.log('c');
     document.querySelector('body').innerText = 'karma-nightmare spec';
+    console.log('b');
     screenshot('./screenshot.png')
       .then(() => {
         const fs = typeof window === 'undefined' &&

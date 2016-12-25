@@ -43,7 +43,7 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    customContextFile: 'context.html',
+    // customContextFile: 'context.html',
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
@@ -64,7 +64,7 @@ module.exports = function(config) {
     nightmareOptions: {
       width: 800,
       height: 600,
-      show: true,
+      show: false,
     },
 
     browserify: {

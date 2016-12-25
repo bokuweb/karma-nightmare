@@ -1,4 +1,4 @@
-box: node:6.9
+box: node:7
 
 build:
 
@@ -15,11 +15,16 @@ build:
     - script:
         name: start xvfb
         code: |
-          export DISPLAY=:99.0
-          start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1024x768x24 -ac +extension GLX +render -noreset
-          sleep 3
+          export DISPLAY=':99.0'
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+          # export DISPLAY=:99.0
+          # start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1024x768x24 -ac +extension GLX +render -noreset
+          # sleep 3
 
     - npm-install
-    - npm-test
+    - script:
+        name: npm test
+        code: |
+          xvfb-run --server-args="-screen 0 1024x768x24" npm test
 
 
