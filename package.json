@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "DEBUG=nightmare:*,electron:* karma start"
   },
   "keywords": [
     "karma-plugin",
