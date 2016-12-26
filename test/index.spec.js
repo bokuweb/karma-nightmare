@@ -44,11 +44,5 @@ describe('karma-nightmare spec', () => {
     assert.equal(require('fs').readFileSync('./test/test.txt', 'utf8'), 'text for test\n');
   })
 
-  it('should set skipScreenshot equals false', () => {
-    const skip = typeof window === 'undefined' &&
-            window.skipScreenshot ||
-            window.parent.skipScreenshot;
-    assert.equal(skip, false);
-  })
 });
 
