@@ -43,11 +43,19 @@ module.exports = function(config) {
 }
 ```
 
+### Browsrher window options
+
 The options attribute allows you to initialize properties on the nightmare browser window.   
 The available options are [documented here](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
 
 *** Attention ***   
 `nodeIntegration`, `waitTimeout`, `preload` options are fixed by `karma-nightmare`. you can not change these options.
+
+### Original options
+
+| name                        | Default | Description                                                                        |
+| :---------------------------| :------ | :--------------------------------------------------------------------------------- |
+| skipScreenshot              | `false` | If set `true`, `screenshot` API is ignored.
 
 Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob/master/karma.conf.js) of this project, using `mocha` and `browserify`.
 
