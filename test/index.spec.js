@@ -46,8 +46,8 @@ describe('karma-nightmare spec', () => {
 
   it('should set skipScreenshot equals false', () => {
     const skip = typeof window === 'undefined' &&
-            window.skip ||
-            window.parent.skip;
+            window.skipScreenshot ||
+            window.parent.skipScreenshot;
     assert.equal(skip, false);
   })
 });
