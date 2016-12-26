@@ -43,5 +43,12 @@ describe('karma-nightmare spec', () => {
           window.parent.require;
     assert.equal(require('fs').readFileSync('./test/test.txt', 'utf8'), 'text for test\n');
   })
+
+  it('should set skipScreenshot equals false', () => {
+    const skip = typeof window === 'undefined' &&
+            window.skip ||
+            window.parent.skip;
+    assert.equal(skip, false);
+  })
 });
 
