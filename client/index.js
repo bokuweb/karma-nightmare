@@ -10,7 +10,9 @@ module.exports = {
       const nightmare = typeof window !== 'undefined' &&
             window.__nightmare ||
             parent.window.__nightmare;
-      if (!nightmare) return resolve();
+      if (!nightmare || nightmare.skipScreenshot) {
+        return resolve();
+      }
       const fs = nightmare.fs;
       const win = nightmare.remote.getCurrentWindow();
       setTimeout(function() {
@@ -22,7 +24,7 @@ module.exports = {
             fs.writeFile(path, data, 'base64', resolve);
           });
         });
-      }, 100);
+      }, 0);
     });
   }
 }
