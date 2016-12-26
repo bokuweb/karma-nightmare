@@ -16,7 +16,7 @@ var NightmareBrowser = function (baseBrowserDecorator, args, config) {
     })
 
     this._process.stdout.on('data', function (data) {
-      console.log('' + data);
+      // console.log('' + data);
     })
   }
 }

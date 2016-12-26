@@ -62,6 +62,7 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     nightmareOptions: {
+      skipScreenshot: false,
       width: 800,
       height: 600,
       show: false,
