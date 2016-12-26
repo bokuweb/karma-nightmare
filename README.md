@@ -43,7 +43,7 @@ module.exports = function(config) {
 }
 ```
 
-### Browsrher window options
+### Browser window options
 
 The options attribute allows you to initialize properties on the nightmare browser window.   
 The available options are [documented here](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
@@ -68,6 +68,7 @@ Return `true`, when test is running on nightmare.
 ### screenshot(path: string): Promise\<void\>
 
 Takes a screenshot of the current test. Useful for view test. The output is always a png.
+If `skipScreenshot` option is set `true`, this API is ignored.
 
 ``` js
 const { screenshot } = require('karma-nightmare');
