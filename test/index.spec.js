@@ -45,8 +45,7 @@ describe('karma-nightmare spec', () => {
   })
 
   it('should set skipScreenshot equals false', () => {
-    const win = window ||  window.parent;
-    const nightmare = win.__nightmare;
+    const nightmare = window.__nightmare ||  window.parent.__nightmare;
     const skip = nightmare.skipScreenshot;
     assert.equal(skip, false);
   })
