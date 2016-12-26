@@ -54,8 +54,8 @@ The available options are [documented here](https://github.com/atom/electron/blo
 ### Original options
 
 | name                        | Default | Description                                                                        |
-| :---------------------------| :------ | :--------------------------------------------------------------------------------- |
-| skipScreenshot              | `false` | If set `true`, `screenshot` API is ignored.
+| :---------------------------| :------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| skipScreenshot              | `false` | If set `true`, `screenshot` API is ignored.                           
 
 Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob/master/karma.conf.js) of this project, using `mocha` and `browserify`.
 
