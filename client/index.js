@@ -1,8 +1,3 @@
-if (typeof window !== 'undefined' && window.__nightmare || parent.window.__nightmare) {
-  const n = window.__nightmare || parent.window.__nightmare;
-  window.require = n.require;
-}
-
 module.exports = {
   isNightmare: function () {
     const nightmare = typeof window !== 'undefined' &&
