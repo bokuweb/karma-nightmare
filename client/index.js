@@ -1,15 +1,13 @@
 module.exports = {
   isNightmare: function () {
     const nightmare = typeof window !== 'undefined' &&
-          window.__nightmare ||
-          parent.window.__nightmare;
+          window.__nightmare || window.parent.__nightmare;
     return !!nightmare;
   },
   screenshot: function (path) {
     return new Promise(function (resolve, reject) {
       const nightmare = typeof window !== 'undefined' &&
-            window.__nightmare ||
-            parent.window.__nightmare;
+            window.__nightmare || window.parent.__nightmare;
       if (!nightmare || nightmare.skipScreenshot) {
         return resolve();
       }
