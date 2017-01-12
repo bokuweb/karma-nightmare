@@ -24,6 +24,22 @@ module.exports = {
         });
       }, 0);
     });
-  }
+  },
+  saveHtml: function (path) {
+    return new Promise(function (resolve, reject) {
+      const nightmare = typeof window !== 'undefined' &&
+      window.__nightmare || window.parent.__nightmare;
+      if (!nightmare || nightmare.skipScreenshot) {
+        return resolve();
+      }
+      const win = nightmare.remote.getCurrentWindow();
+      nightmare.mkdirp(nightmare.path.dirname(path), function (err) {
+        if (err) reject(err);
+        win.webContents.savePage(path, 'HTMLComplete', function (err) {
+          if (err) reject(err);
+          resolve();
+        });
+      });
+    });
+  },
 }
-
