@@ -51,7 +51,7 @@ The available options are [documented here](https://github.com/atom/electron/blo
 *** Attention ***   
 `nodeIntegration`, `waitTimeout`, `preload` options are fixed by `karma-nightmare`. you can not change these options.
 
-### Original options
+### karma-nightmare options
 
 | name                        | Default | Description                                                                        |
 | :---------------------------| :------ | :------------------------------------------------------------------------------------------------------------------------------ |
