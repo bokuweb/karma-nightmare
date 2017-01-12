@@ -62,5 +62,20 @@ describe('karma-nightmare spec', () => {
       })
       .catch(() => { throw new Error('rejected') });
   });
+
+  it('should save html with specific saveType', (done) => {
+    document.querySelector('body').innerText = 'karma-nightmare spec';
+    saveHtml('./test_html_only.html', 'HTMLOnly')
+      .then(() => {
+        const fs = typeof window === 'undefined' &&
+                window.__nightmare.fs ||
+                window.parent.__nightmare.fs;
+        fs.readFileSync('./test_html_only.html');
+        fs.stat('./test_html_only_files', (err) => {
+          if (err) done();
+        });
+      })
+      .catch(() => { throw new Error('rejected') });
+  });
 });
 

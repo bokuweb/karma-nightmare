@@ -1,9 +1,10 @@
 {
   "name": "karma-nightmare",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "rimraf test_files",
     "test": "karma start"
   },
   "keywords": [
@@ -26,6 +27,7 @@
     "karma-cli": "^1.0.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.2.0",
+    "rimraf": "^2.5.4",
     "watchify": "^3.8.0"
   },
   "dependencies": {

@@ -25,7 +25,7 @@ module.exports = {
       }, 0);
     });
   },
-  saveHtml: function (path) {
+  saveHtml: function (path, saveType) {
     return new Promise(function (resolve, reject) {
       const nightmare = typeof window !== 'undefined' &&
       window.__nightmare || window.parent.__nightmare;
@@ -35,10 +35,18 @@ module.exports = {
       const win = nightmare.remote.getCurrentWindow();
       nightmare.mkdirp(nightmare.path.dirname(path), function (err) {
         if (err) reject(err);
-        win.webContents.savePage(path, 'HTMLComplete', function (err) {
-          if (err) reject(err);
-          resolve();
-        });
+        if (saveType === 'HTMLOnly') {
+          // Faster than using nightmare
+          nightmare.fs.writeFile(path, document.documentElement.outerHTML, 'utf-8', function (err) {
+            if (err) reject(err);
+            resolve();
+          });
+        } else {
+          win.webContents.savePage(path, saveType || 'HTMLComplete', function (err) {
+            if (err) reject(err);
+            resolve();
+          });
+        }
       });
     });
   },

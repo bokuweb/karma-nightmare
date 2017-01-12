@@ -82,7 +82,7 @@ describe('karma-nightmare spec', () => {
 });
 ```
 
-### saveHtml(path: string): Promise\<void\>
+### saveHtml(path: string, saveType?: string): Promise\<void\>
 
 Save html of the current test. Useful for view test.
 
@@ -97,6 +97,7 @@ describe('karma-nightmare spec', () => {
 });
 ```
 
+If you want `saveType` details, see http://electron.atom.io/docs/api/web-contents/#contentssavepagefullpath-savetype-callback .
 
 ## Test
 
