@@ -53,9 +53,10 @@ The available options are [documented here](https://github.com/atom/electron/blo
 
 ### karma-nightmare options
 
-| name                        | Default | Description                                                                        |
-| :---------------------------| :------ | :------------------------------------------------------------------------------------------------------------------------------ |
-| skipScreenshot              | `false` | If set `true`, `screenshot` API is ignored.                           
+| name                         | Default | Description                                                                                                                     |
+| :--------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| skipScreenshot               | `false` | If set `true`, `screenshot` API is ignored.                                                                                     |
+| skipCaptureHtml                         |    false |     If set `true`, `saveHtml` API is ignored.                                                                                                                                    |
 
 Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob/master/karma.conf.js) of this project, using `mocha` and `browserify`.
 

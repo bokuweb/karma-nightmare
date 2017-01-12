@@ -29,7 +29,7 @@ module.exports = {
     return new Promise(function (resolve, reject) {
       const nightmare = typeof window !== 'undefined' &&
       window.__nightmare || window.parent.__nightmare;
-      if (!nightmare || nightmare.skipScreenshot) {
+      if (!nightmare || nightmare.skipCaptureHtml) {
         return resolve();
       }
       const win = nightmare.remote.getCurrentWindow();
