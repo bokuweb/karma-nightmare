@@ -1,4 +1,4 @@
-const { screenshot } = require('../');
+const { screenshot, saveHtml } = require('../');
 const { assert } = require('chai');
 
 describe('karma-nightmare spec', () => {
@@ -49,5 +49,18 @@ describe('karma-nightmare spec', () => {
     const skip = nightmare.skipScreenshot;
     assert.equal(skip, false);
   })
+
+  it('should save html', (done) => {
+    document.querySelector('body').innerText = 'karma-nightmare spec';
+    saveHtml('./test.html')
+      .then(() => {
+        const fs = typeof window === 'undefined' &&
+                window.__nightmare.fs ||
+                window.parent.__nightmare.fs;
+        fs.readFileSync('./test.html');
+        done();
+      })
+      .catch(() => { throw new Error('rejected') });
+  });
 });
 
