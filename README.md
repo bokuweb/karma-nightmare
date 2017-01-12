@@ -82,7 +82,7 @@ describe('karma-nightmare spec', () => {
 });
 ```
 
-### saveHtml(path: string, saveType: string = 'HTMLComplete'): Promise\<void\>
+### saveHtml(path: string, saveType?: string): Promise\<void\>
 
 Save html of the current test. Useful for view test.
 
