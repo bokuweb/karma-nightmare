@@ -15,7 +15,9 @@ module.exports = {
       const win = nightmare.remote.getCurrentWindow();
       setTimeout(function() {
         win.capturePage(function(img) {
-          const png = img.toDataURL();
+          const size = img.getSize();
+          const ratio = window.devicePixelRatio;
+          const png = img.resize({ width: size.width / ratio, height: size.height / ratio }).toDataURL();
           const data = png.split(',')[1];
           nightmare.mkdirp(nightmare.path.dirname(path), function (err) {
             if (err) reject(err);
