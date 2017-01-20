@@ -2,4 +2,6 @@ node_modules/*
 test/screenshot/*
 screenshot.png
 test_html_only.html
-test_html
+test.html
+test_files/
+npm-debug.log
