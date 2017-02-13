@@ -91,9 +91,9 @@ Save html of the current test. Useful for view test.
 const { saveHtml } = require('karma-nightmare');
 
 describe('karma-nightmare spec', () => {
-  it('should capture browser screenshot', (done) => {
+  it('should save current html snapshot', (done) => {
     document.querySelector('body').innerText = 'karma-nightmare spec';
-    saveHtml('./screenshot.png').then(done);
+    saveHtml('./snapshot.html').then(done);
   })
 });
 ```
