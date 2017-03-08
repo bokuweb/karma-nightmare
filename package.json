@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "pretest": "rimraf test_files",
-    "test": "karma start"
+    "test": "karma start",
+    "test:watch": "karma start --auto-watch --no-single-run"
   },
   "keywords": [
     "karma-plugin",

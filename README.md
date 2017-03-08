@@ -24,6 +24,8 @@ $ npm i -D karma-nightmare
 
 ## Usage
 
+### Karma config example
+
 ``` javascript
 // karma.conf.js
 module.exports = function(config) {
@@ -42,6 +44,15 @@ module.exports = function(config) {
     },
   })
 }
+```
+
+### require
+
+You can use `require` as below, in your test.
+
+``` js
+const fs = window.require('fs');
+fs.readFileSync('./screenshot.png');
 ```
 
 ### Browser window options
