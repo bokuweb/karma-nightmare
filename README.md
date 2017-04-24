@@ -68,7 +68,7 @@ The available options are [documented here](https://github.com/atom/electron/blo
 | name                         | Default | Description                                                                                                                     |
 | :--------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
 | skipScreenshot               | `false` | If set `true`, `screenshot` API is ignored.                                                                                     |
-| skipCaptureHtml                         |    false |     If set `true`, `saveHtml` API is ignored.                                                                                                                                    |
+| skipCaptureHtml              |    false |     If set `true`, `saveHtml` API is ignored.                                                                                  |
 
 Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob/master/karma.conf.js) of this project, using `mocha` and `browserify`.
 
@@ -77,6 +77,11 @@ Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob
 ### isNightmare(): boolean
 
 Return `true`, when test is running on nightmare.
+
+### getCurrentWindow(): ?BrowserWindow
+
+Return current `BrowserWindow`, when test is running on nightmare.
+Return `null`, when running on other browser.
 
 ### screenshot(path: string): Promise\<void\>
 
