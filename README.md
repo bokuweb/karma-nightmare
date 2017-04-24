@@ -1,5 +1,7 @@
 # karma-nightmare ⚡
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bokuweb/karma-nightmare.svg)](https://greenkeeper.io/)
+
 A Karma plugin. Launcher for Nightmare
 
 [![Build Status](https://img.shields.io/travis/bokuweb/karma-nightmare.svg?style=flat-square)](https://travis-ci.org/bokuweb/karma-nightmare)
