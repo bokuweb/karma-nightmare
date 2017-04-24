@@ -78,7 +78,7 @@ Please, see also [karma.conf.js](https://github.com/bokuweb/karma-nightmare/blob
 
 Return `true`, when test is running on nightmare.
 
-### getCurrentWindow(): ?BrowserWindow
+### getCurrentWindow(): ?Electron.BrowserWindow
 
 Return current `BrowserWindow`, when test is running on nightmare.
 Return `null`, when running on other browser.

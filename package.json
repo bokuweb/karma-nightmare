@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "rimraf test_files",
-    "type": "electron-typescript-definitions --out=types/electron.d.ts",
+    "gen:type": "electron-typescript-definitions --out=types/electron.d.ts",
     "test": "karma start",
     "test:watch": "karma start --auto-watch --no-single-run"
   },
