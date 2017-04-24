@@ -1,5 +1,5 @@
-const { screenshot, saveHtml } = require('../');
-const { assert } = require('chai');
+const { screenshot, saveHtml, getCurrentWindow } = require('../');
+const assert = require('assert');
 
 describe('karma-nightmare spec', () => {
 
@@ -61,6 +61,17 @@ describe('karma-nightmare spec', () => {
         });
       })
       .catch(() => { throw new Error('rejected') });
+  });
+
+  it('should get current browser window', () => {
+    assert(!!getCurrentWindow());
+  });
+
+  it('should get browser window size', () => {
+    const win = getCurrentWindow();
+    win.setSize(200, 100);
+    assert.equal(win.getSize()[0], 200);
+    assert.equal(win.getSize()[1], 100);
   });
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "karma-nightmare",
-  "version": "0.4.5",
-  "description": "",
+  "version": "0.4.6",
+  "description": "A Karma plugin. Launcher for Nightmare",
   "main": "index.js",
   "scripts": {
     "pretest": "rimraf test_files",

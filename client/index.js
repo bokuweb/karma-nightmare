@@ -1,20 +1,30 @@
+function getNightmare() {
+  return typeof window !== 'undefined' &&
+    window.__nightmare || window.parent.__nightmare;
+}
+
 module.exports = {
   isNightmare: function () {
-    const nightmare = typeof window !== 'undefined' &&
-          window.__nightmare || window.parent.__nightmare;
+    const nightmare = getNightmare();
     return !!nightmare;
+  },
+  getCurrentWindow: function () {
+    const nightmare = getNightmare();
+    if (!nightmare) {
+      return null;
+    }
+    return nightmare.remote.getCurrentWindow();
   },
   screenshot: function (path) {
     return new Promise(function (resolve, reject) {
-      const nightmare = typeof window !== 'undefined' &&
-            window.__nightmare || window.parent.__nightmare;
+      const nightmare = getNightmare();
       if (!nightmare || nightmare.skipScreenshot) {
         return resolve();
       }
       const fs = nightmare.fs;
       const win = nightmare.remote.getCurrentWindow();
-      setTimeout(function() {
-        win.capturePage(function(img) {
+      setTimeout(function () {
+        win.capturePage(function (img) {
           const size = img.getSize();
           const ratio = window.devicePixelRatio;
           const png = img.resize({ width: size.width / ratio, height: size.height / ratio }).toDataURL();
@@ -29,8 +39,7 @@ module.exports = {
   },
   saveHtml: function (path, saveType) {
     return new Promise(function (resolve, reject) {
-      const nightmare = typeof window !== 'undefined' &&
-      window.__nightmare || window.parent.__nightmare;
+      const nightmare = getNightmare();
       if (!nightmare || nightmare.skipCaptureHtml) {
         return resolve();
       }

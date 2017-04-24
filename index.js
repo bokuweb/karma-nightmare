@@ -17,7 +17,7 @@ var NightmareBrowser = function (baseBrowserDecorator, args, config) {
     })
 
     this._process.stdout.on('data', function (data) {
-      // console.log('' + data);
+      console.log('' + data);
     })
   }
 }
@@ -33,4 +33,5 @@ module.exports = {
   screenshot: client.screenshot,
   saveHtml: client.saveHtml,
   isNightmare: client.isNightmare,
+  getCurrentWindow: client.getCurrentWindow,  
 }
