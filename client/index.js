@@ -23,7 +23,7 @@ module.exports = {
       }
       const fs = nightmare.fs;
       const win = nightmare.remote.getCurrentWindow();
-      setTimeout(function () {
+      requestIdleCallback(function () {
         win.capturePage(function (img) {
           const size = img.getSize();
           const ratio = window.devicePixelRatio;
@@ -34,7 +34,7 @@ module.exports = {
             fs.writeFile(path, data, 'base64', resolve);
           });
         });
-      }, 0);
+      });
     });
   },
   saveHtml: function (path, saveType) {
