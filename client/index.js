@@ -29,10 +29,13 @@ module.exports = {
           const ratio = window.devicePixelRatio;
           const png = img.resize({ width: size.width / ratio, height: size.height / ratio }).toDataURL();
           const data = png.split(',')[1];
-          nightmare.mkdirp(nightmare.path.dirname(path), function (err) {
-            if (err) reject(err);
-            fs.writeFile(path, data, 'base64', resolve);
-          });
+          nightmare.mkdirp(nightmare.path.dirname(path))
+            .then(() => {
+              fs.writeFile(path, data, 'base64', resolve);
+            })
+            .catch((err) => {
+              reject(err);
+            });
         });
       });
     });
@@ -44,21 +47,24 @@ module.exports = {
         return resolve();
       }
       const win = nightmare.remote.getCurrentWindow();
-      nightmare.mkdirp(nightmare.path.dirname(path), function (err) {
-        if (err) reject(err);
-        if (saveType === 'HTMLOnly') {
-          // Faster than using nightmare
-          nightmare.fs.writeFile(path, document.documentElement.outerHTML, 'utf-8', function (err) {
-            if (err) reject(err);
-            resolve();
-          });
-        } else {
-          win.webContents.savePage(path, saveType || 'HTMLComplete', function (err) {
-            if (err) reject(err);
-            resolve();
-          });
-        }
-      });
+      nightmare.mkdirp(nightmare.path.dirname(path))
+        .then(() => {
+          if (saveType === 'HTMLOnly') {
+            // Faster than using nightmare
+            nightmare.fs.writeFile(path, document.documentElement.outerHTML, 'utf-8', function (err) {
+              if (err) reject(err);
+              resolve();
+            });
+          } else {
+            win.webContents.savePage(path, saveType || 'HTMLComplete', function (err) {
+              if (err) reject(err);
+              resolve();
+            });
+          }
+        })
+        .catch((err) => {
+          reject(err);
+        });
     });
-  },
+  }
 }
