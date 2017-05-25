@@ -34,7 +34,7 @@
     "watchify": "^3.8.0"
   },
   "dependencies": {
-    "mkdirp": "^0.5.1",
+    "make-dir": "^1.0.0",
     "nightmare": "^2.9.1"
   },
   "types": "./index.d.ts"
