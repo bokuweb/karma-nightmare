@@ -37,7 +37,7 @@ module.exports = {
               reject(err);
             });
         });
-      });
+      }, { timeout: 1000 });
     });
   },
   saveHtml: function (path, saveType) {
