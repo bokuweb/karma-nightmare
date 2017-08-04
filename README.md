@@ -1,3 +1,5 @@
+<div style="text-align:center"><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" /></div>
+
 # karma-nightmare ⚡
 
 A Karma plugin. Launcher for Nightmare
