@@ -1,6 +1,4 @@
-<p align="center"><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" /></p>
-
-# karma-nightmare ⚡
+<p align="center"><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" />
 
 A Karma plugin. Launcher for Nightmare
 
@@ -9,7 +7,7 @@ A Karma plugin. Launcher for Nightmare
 [![Version](https://img.shields.io/npm/v/karma-nightmare.svg?style=flat-square)](https://www.npmjs.com/package/karma-nightmare)
 [![npm](https://img.shields.io/npm/dm/karma-nightmare.svg?style=flat-square)]()
 [![Greenkeeper badge](https://badges.greenkeeper.io/bokuweb/karma-nightmare.svg)](https://greenkeeper.io/)
-
+</p>
 
 ## Table of Contents
 
