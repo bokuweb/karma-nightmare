@@ -1,4 +1,4 @@
-<center><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" /></center>
+<p align="center"><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" /></p>
 
 # karma-nightmare ⚡
 
