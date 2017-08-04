@@ -1,6 +1,6 @@
-<p align="center"><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" />
+<p align="center"><img src ="https://github.com/bokuweb/karma-nightmare/blob/master/logo-k.png?raw=true" /></p>
 
-A Karma plugin. Launcher for Nightmare</p>
+<p align="center">A Karma plugin. Launcher for Nightmare</p>
 
 
 [![Build Status](https://img.shields.io/travis/bokuweb/karma-nightmare.svg?style=flat-square)](https://travis-ci.org/bokuweb/karma-nightmare)
