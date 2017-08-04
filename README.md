@@ -3,11 +3,11 @@
 <p align="center">A Karma plugin. Launcher for Nightmare</p>
 
 
-[![Build Status](https://img.shields.io/travis/bokuweb/karma-nightmare.svg?style=flat-square)](https://travis-ci.org/bokuweb/karma-nightmare)
+<p align="center">[![Build Status](https://img.shields.io/travis/bokuweb/karma-nightmare.svg?style=flat-square)](https://travis-ci.org/bokuweb/karma-nightmare)
 [![Build status](https://ci.appveyor.com/api/projects/status/9fj4u11fha794rye?svg=true)](https://ci.appveyor.com/project/bokuweb/karma-nightmare)
 [![Version](https://img.shields.io/npm/v/karma-nightmare.svg?style=flat-square)](https://www.npmjs.com/package/karma-nightmare)
 [![npm](https://img.shields.io/npm/dm/karma-nightmare.svg?style=flat-square)]()
-[![Greenkeeper badge](https://badges.greenkeeper.io/bokuweb/karma-nightmare.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/bokuweb/karma-nightmare.svg)](https://greenkeeper.io/)</p>
 
 ## Table of Contents
 
