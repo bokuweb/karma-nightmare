@@ -36,7 +36,7 @@
   "dependencies": {
     "electron": "1.7.6",
     "make-dir": "^1.0.0",
-    "nightmare": "^2.9.1"
+    "nightmare": "git+https://github.com/segmentio/nightmare#master"
   },
   "types": "./index.d.ts"
 }
