@@ -21,7 +21,7 @@
   "author": "@bokuweb",
   "license": "MIT",
   "devDependencies": {
-    "babelify": "^7.3.0",
+    "babelify": "^8.0.0",
     "browserify": "^15.0.0",
     "chai": "^4.0.2",
     "electron-typescript-definitions": "^1.0.0",
