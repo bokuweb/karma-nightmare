@@ -12,6 +12,14 @@ var NightmareBrowser = function (baseBrowserDecorator, args, config) {
       JSON.stringify(options),
     ]);
 
+    this._process.stderr.on('data', function (data) {
+      console.log('' + data);
+    })
+
+    this._process.stdout.on('data', function (data) {
+      console.log('' + data);
+    })
+
     this.on('kill', function (done) {
       if (!this._process) return;
       this._process.kill('SIGKILL');
