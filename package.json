@@ -24,7 +24,7 @@
     "babelify": "^7.3.0",
     "browserify": "^16.0.0",
     "chai": "^4.0.2",
-    "electron-typescript-definitions": "^1.0.0",
+    "electron-typescript-definitions": "^2.0.0",
     "karma": "^2.0.0",
     "karma-browserify": "^5.1.0",
     "karma-cli": "^1.0.1",
