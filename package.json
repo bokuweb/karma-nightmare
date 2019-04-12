@@ -29,7 +29,7 @@
     "karma-browserify": "^5.1.0",
     "karma-cli": "^1.0.1",
     "karma-mocha": "^1.3.0",
-    "mocha": "^5.0.0",
+    "mocha": "^6.1.3",
     "rimraf": "^2.5.4",
     "watchify": "^3.8.0"
   },
