@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "babelify": "^7.3.0",
-    "browserify": "^16.0.0",
+    "browserify": "^16.4.0",
     "chai": "^4.0.2",
     "electron-typescript-definitions": "^1.0.0",
     "karma": "^2.0.0",
